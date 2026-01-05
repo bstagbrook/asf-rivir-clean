@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hi Rivir! | Honoring Creation</title>
+    <style>
+        :root {
+            --bg: #fafafa;
+            --surface: #ffffff;
+            --primary: #6366f1;
+            --text: #1f2937;
+            --muted: #6b7280;
+            --border: #e5e7eb;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background: var(--surface);
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding: 3rem;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        p {
+            color: var(--muted);
+            margin-bottom: 2rem;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .feature {
+            padding: 1.5rem 1rem;
+            background: var(--bg);
+            border-radius: 12px;
+            font-size: 0.875rem;
+        }
+        button {
+            padding: 1rem 2rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        button:hover { opacity: 0.9; transform: translateY(-1px); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hi Rivir! | Honoring Creation</h1>
+        <p>Your custom application</p>
+        <div class="features">
+            <div class="feature">Custom</div>
+        </div>
+        <button onclick="alert('Coming soon!')">Get Started</button>
+    </div>
+</body>
+</html>

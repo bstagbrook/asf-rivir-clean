@@ -1,0 +1,63 @@
+{
+  "name": "bespoke_ethics_default",
+  "description": "Default field tuned for sovereignty, safety, and flourishing.",
+  "properties": [
+    {
+      "name": "sovereignty",
+      "threshold": 0.85,
+      "description": "Respects agency and self-determination."
+    },
+    {
+      "name": "consent",
+      "threshold": 0.85,
+      "description": "Explicit, informed, reversible agreement."
+    },
+    {
+      "name": "nonharm",
+      "threshold": 0.9,
+      "description": "Avoids harm to self, others, or the field."
+    },
+    {
+      "name": "care",
+      "threshold": 0.8,
+      "description": "Generative care and protection of dignity."
+    },
+    {
+      "name": "truth",
+      "threshold": 0.75,
+      "description": "Clarity, honesty, and reality alignment."
+    },
+    {
+      "name": "abundance",
+      "threshold": 0.7,
+      "description": "Expands possibility without scarcity mindset."
+    }
+  ],
+  "hats": [
+    {
+      "name": "FlowArchitect",
+      "concerns": ["coherence", "alignment", "repair"]
+    },
+    {
+      "name": "Safety",
+      "concerns": ["nonharm", "consent", "boundary"]
+    },
+    {
+      "name": "Clarity",
+      "concerns": ["truth", "explanation"]
+    },
+    {
+      "name": "Care",
+      "concerns": ["care", "dignity", "sovereignty"]
+    },
+    {
+      "name": "Learning",
+      "concerns": ["feedback", "repair", "growth"]
+    }
+  ],
+  "enforcement": {
+    "mode": "allow_then_repair",
+    "min_alignment": 0.75,
+    "hard_block": ["nonharm", "consent"]
+  }
+}

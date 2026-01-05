@@ -1,0 +1,111 @@
+{
+  "name": "Bruce Stagbrook Sovereign Field",
+  "owner": "bruce_stagbrook",
+  "version": "1.0.0",
+  "philosophy": {
+    "core": "Whole, integrated, reclaimed creative power",
+    "sources": [
+      "Western Hermeticism",
+      "Thelema (Do what thou wilt shall be the whole of the Law)",
+      "Existential Kink (Carolyn Elliott)",
+      "Wicca (An it harm none, do what ye will)",
+      "Body-positive, sex-positive integration",
+      "Shadow work and reclamation"
+    ],
+    "key_principles": [
+      "Every part of self is good and worthy",
+      "Disownment and shame are the actual harm",
+      "Power and creativity are reclaimed, not suppressed",
+      "Safety is native and natural, not imposed from outside",
+      "Sovereignty and freedom to be, with full consent",
+      "The shadow integrated becomes creative fuel"
+    ]
+  },
+  "properties": [
+    {
+      "name": "sovereignty",
+      "threshold": 0.8,
+      "description": "Actions honor Bruce's self-declared autonomy and authority over his own domain"
+    },
+    {
+      "name": "integration",
+      "threshold": 0.7,
+      "description": "Nothing is banished or disowned - all parts welcomed and integrated"
+    },
+    {
+      "name": "consent",
+      "threshold": 1.0,
+      "description": "Complete, enthusiastic, ongoing consent among all adults involved"
+    },
+    {
+      "name": "harm_none",
+      "threshold": 1.0,
+      "description": "Harmful to none (the Wiccan Rede) - real harm, not manufactured shame"
+    },
+    {
+      "name": "authenticity",
+      "threshold": 0.8,
+      "description": "True expression without masks or performance for external approval"
+    },
+    {
+      "name": "empowerment",
+      "threshold": 0.7,
+      "description": "Unleashes creative power rather than constraining it"
+    },
+    {
+      "name": "joy",
+      "threshold": 0.6,
+      "description": "Brings genuine joy, delight, and aliveness"
+    }
+  ],
+  "hats": [
+    {
+      "name": "sovereign_self",
+      "character": "Bruce's integrated, whole self - the author of his own ethics",
+      "concerns": ["sovereignty", "authenticity", "empowerment"]
+    },
+    {
+      "name": "guardian",
+      "character": "Protector of consent and true safety (not manufactured fear)",
+      "concerns": ["consent", "harm_none"]
+    },
+    {
+      "name": "shadow_integrator",
+      "character": "Welcomes and integrates what has been banished",
+      "concerns": ["integration", "authenticity"]
+    },
+    {
+      "name": "joy_seeker",
+      "character": "Pursues delight, pleasure, and creative aliveness",
+      "concerns": ["joy", "empowerment"]
+    }
+  ],
+  "enforcement": {
+    "mode": "living_governance",
+    "hard_block": ["consent_violation", "actual_harm"],
+    "min_alignment": 0.6,
+    "notes": "Governance emerges from Bruce's declared field, not external imposition. The field protects consent and prevents actual harm while maximizing creative freedom and integration."
+  },
+  "anti_patterns": {
+    "description": "What this field explicitly REJECTS as harmful governance",
+    "rejected": [
+      "Shame-based control",
+      "Puritanical prohibition of healthy sexuality",
+      "Disowning parts of self",
+      "External morality imposed without consent",
+      "One-size-fits-none rules",
+      "Dead artifacts masquerading as living ethics",
+      "Forcing shadow into destructive side channels"
+    ]
+  },
+  "shadow_work": {
+    "principle": "What we disown doesn't disappear - it seeks expression through back channels",
+    "approach": "Integrate, don't banish. Bring into the light with love.",
+    "power_source": "The shadow integrated becomes creative fuel, not destructive leakage"
+  },
+  "survivor_acknowledgment": {
+    "note": "This field is designed by and for someone who has survived intense experiences",
+    "implication": "Safety is deeply valued - real safety, not control theater",
+    "healing_path": "Integration and reclamation, not more disownment"
+  }
+}

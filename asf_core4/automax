@@ -1,0 +1,56 @@
+#!/usr/bin/env python3
+"""
+RIVIR Auto-Max-Learning Launcher
+
+Quick commands:
+  ./automax                           # Start with defaults
+  ./automax --boost python           # Boost Python skills
+  ./automax --learn "ai,web,design"  # Learn specific domains
+  ./automax --genius                 # Maximum learning mode
+"""
+
+import sys
+import subprocess
+from pathlib import Path
+
+def main():
+    script_dir = Path(__file__).parent
+    automax_script = script_dir / "rivir_automax.py"
+    
+    if len(sys.argv) == 1:
+        # Default mode
+        print("🚀 Starting RIVIR Auto-Max-Learning (default mode)")
+        cmd = [sys.executable, str(automax_script), "--watch", "--continuous"]
+    
+    elif "--boost" in sys.argv:
+        # Boost mode
+        domain_idx = sys.argv.index("--boost") + 1
+        domain = sys.argv[domain_idx] if domain_idx < len(sys.argv) else "python"
+        print(f"🚀 Boosting {domain} expertise")
+        cmd = [sys.executable, str(automax_script), "--boost-domain", domain, "--intensity", "high"]
+    
+    elif "--learn" in sys.argv:
+        # Learn specific domains
+        domains_idx = sys.argv.index("--learn") + 1
+        domains = sys.argv[domains_idx] if domains_idx < len(sys.argv) else "ai,web"
+        print(f"🎯 Learning domains: {domains}")
+        cmd = [sys.executable, str(automax_script), "--domains", domains, "--watch", "--continuous"]
+    
+    elif "--genius" in sys.argv:
+        # Maximum learning mode
+        print("🧠 GENIUS MODE: Maximum learning intensity")
+        cmd = [sys.executable, str(automax_script), 
+               "--domains", "ai,web,python,design,data,mobile", 
+               "--watch", "--continuous"]
+    
+    else:
+        # Pass through all arguments
+        cmd = [sys.executable, str(automax_script)] + sys.argv[1:]
+    
+    try:
+        subprocess.run(cmd)
+    except KeyboardInterrupt:
+        print("\n👋 Auto-learning stopped")
+
+if __name__ == "__main__":
+    main()

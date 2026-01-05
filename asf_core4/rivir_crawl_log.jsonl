@@ -1,0 +1,102 @@
+{"event": "blocked_robots", "url": "https://en.wikipedia.org/wiki/Shape", "ts": 1767578297.698289}
+{"event": "fetched", "url": "https://arxiv.org/abs/1706.03762", "depth": 0, "file": "rivir_crawl/arxiv.org_abs_1706.03762.html", "ts": 1767578298.0609229}
+{"event": "fetched", "url": "https://arxiv.org/abs/1706.03762#content", "depth": 1, "file": "rivir_crawl/arxiv.org_abs_1706.03762.html", "ts": 1767578298.6394198}
+{"event": "fetched", "url": "https://info.arxiv.org/about/ourmembers.html", "depth": 1, "file": "rivir_crawl/info.arxiv.org_about_ourmembers.html.html", "ts": 1767578299.680193}
+{"event": "fetched", "url": "https://info.arxiv.org/about/donate.html", "depth": 1, "file": "rivir_crawl/info.arxiv.org_about_donate.html.html", "ts": 1767578300.555521}
+{"event": "blocked_robots", "url": "https://arxiv.org/IgnoreMe", "ts": 1767578301.067683}
+{"event": "fetched", "url": "https://arxiv.org/", "depth": 1, "file": "rivir_crawl/arxiv.org_index.html", "ts": 1767578301.128039}
+{"event": "fetched", "url": "https://arxiv.org/list/cs/recent", "depth": 1, "file": "rivir_crawl/arxiv.org_list_cs_recent.html", "ts": 1767578301.719163}
+{"event": "fetched", "url": "https://info.arxiv.org/help", "depth": 1, "file": "rivir_crawl/info.arxiv.org_help.html", "ts": 1767578302.629517}
+{"event": "blocked_robots", "url": "https://arxiv.org/search/advanced", "ts": 1767578303.14345}
+{"event": "fetched", "url": "https://arxiv.org/login", "depth": 1, "file": "rivir_crawl/arxiv.org_login.html", "ts": 1767578303.258825}
+{"event": "fetched", "url": "https://info.arxiv.org/about", "depth": 1, "file": "rivir_crawl/info.arxiv.org_about.html", "ts": 1767578304.114597}
+{"event": "fetched", "url": "https://arxiv.org/abs/1706.03762v1", "depth": 1, "file": "rivir_crawl/arxiv.org_abs_1706.03762v1.html", "ts": 1767578304.7184231}
+{"event": "blocked_robots", "url": "https://arxiv.org/search/cs?searchtype=author&query=Vaswani,+A", "ts": 1767578305.231433}
+{"event": "blocked_robots", "url": "https://arxiv.org/search/cs?searchtype=author&query=Shazeer,+N", "ts": 1767578305.231817}
+{"event": "blocked_robots", "url": "https://arxiv.org/search/cs?searchtype=author&query=Parmar,+N", "ts": 1767578305.232041}
+{"event": "blocked_robots", "url": "https://arxiv.org/search/cs?searchtype=author&query=Uszkoreit,+J", "ts": 1767578305.232254}
+{"event": "blocked_robots", "url": "https://arxiv.org/search/cs?searchtype=author&query=Jones,+L", "ts": 1767578305.2324429}
+{"event": "blocked_robots", "url": "https://arxiv.org/search/cs?searchtype=author&query=Gomez,+A+N", "ts": 1767578305.232627}
+{"event": "blocked_robots", "url": "https://arxiv.org/search/cs?searchtype=author&query=Kaiser,+L", "ts": 1767578305.2328079}
+{"event": "blocked_robots", "url": "https://arxiv.org/search/cs?searchtype=author&query=Polosukhin,+I", "ts": 1767578305.233}
+{"event": "skip_non_html", "url": "https://arxiv.org/pdf/1706.03762", "content_type": "application/pdf", "ts": 1767578305.2841651}
+{"event": "fetched", "url": "https://arxiv.org/html/1706.03762v7", "depth": 1, "file": "rivir_crawl/arxiv.org_html_1706.03762v7.html", "ts": 1767578305.3499572}
+{"event": "fetched", "url": "https://arxiv.org/abs/1706.03762v7", "depth": 1, "file": "rivir_crawl/arxiv.org_abs_1706.03762v7.html", "ts": 1767578305.936429}
+{"event": "blocked_robots", "url": "https://arxiv.org/show-email/f53b7360/1706.03762", "ts": 1767578306.4493408}
+{"event": "fetched", "url": "https://arxiv.org/abs/1706.03762v2", "depth": 1, "file": "rivir_crawl/arxiv.org_abs_1706.03762v2.html", "ts": 1767578306.578558}
+{"event": "fetched", "url": "https://arxiv.org/abs/1706.03762v3", "depth": 1, "file": "rivir_crawl/arxiv.org_abs_1706.03762v3.html", "ts": 1767578307.2212899}
+{"event": "fetched", "url": "https://arxiv.org/abs/1706.03762v4", "depth": 1, "file": "rivir_crawl/arxiv.org_abs_1706.03762v4.html", "ts": 1767578307.880534}
+{"event": "fetched", "url": "https://arxiv.org/abs/1706.03762v5", "depth": 1, "file": "rivir_crawl/arxiv.org_abs_1706.03762v5.html", "ts": 1767578308.51071}
+{"event": "fetched", "url": "https://arxiv.org/abs/1706.03762v6", "depth": 1, "file": "rivir_crawl/arxiv.org_abs_1706.03762v6.html", "ts": 1767578309.105246}
+{"event": "skip_non_html", "url": "https://arxiv.org/pdf/1706.03762", "content_type": "application/pdf", "ts": 1767578309.693104}
+{"event": "blocked_robots", "url": "https://arxiv.org/src/1706.03762", "ts": 1767578309.696209}
+{"event": "fetched", "url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/", "depth": 1, "file": "rivir_crawl/arxiv.org_licenses_nonexclusive-distrib_1.0.html", "ts": 1767578310.001}
+{"event": "blocked_robots", "url": "https://arxiv.org/prevnext?id=1706.03762&function=prev&context=cs.CL", "ts": 1767578310.503616}
+{"event": "blocked_robots", "url": "https://arxiv.org/prevnext?id=1706.03762&function=next&context=cs.CL", "ts": 1767578310.504021}
+{"event": "fetched", "url": "https://arxiv.org/list/cs.CL/new", "depth": 1, "file": "rivir_crawl/arxiv.org_list_cs.CL_new.html", "ts": 1767578310.609044}
+{"event": "fetched", "url": "https://arxiv.org/list/cs.CL/recent", "depth": 1, "file": "rivir_crawl/arxiv.org_list_cs.CL_recent.html", "ts": 1767578311.2220511}
+{"event": "fetched", "url": "https://arxiv.org/list/cs.CL/2017-06", "depth": 1, "file": "rivir_crawl/arxiv.org_list_cs.CL_2017-06.html", "ts": 1767578311.9415948}
+{"event": "fetched", "url": "https://arxiv.org/abs/1706.03762?context=cs", "depth": 1, "file": "rivir_crawl/arxiv.org_abs_1706.03762.html", "ts": 1767578312.591433}
+{"event": "fetched", "url": "https://arxiv.org/abs/1706.03762?context=cs.LG", "depth": 1, "file": "rivir_crawl/arxiv.org_abs_1706.03762.html", "ts": 1767578313.486517}
+{"event": "blocked_robots", "url": "https://arxiv.org/tb/1706.03762", "ts": 1767578313.999292}
+{"event": "fetched", "url": "https://info.arxiv.org/help/trackback.html", "depth": 1, "file": "rivir_crawl/info.arxiv.org_help_trackback.html.html", "ts": 1767578314.229833}
+{"event": "fetched", "url": "https://info.arxiv.org/labs/showcase.html#arxiv-bibliographic-explorer", "depth": 1, "file": "rivir_crawl/info.arxiv.org_labs_showcase.html.html", "ts": 1767578315.027313}
+{"event": "fetched", "url": "https://info.arxiv.org/labs/index.html", "depth": 1, "file": "rivir_crawl/info.arxiv.org_labs_index.html.html", "ts": 1767578315.826287}
+{"event": "blocked_robots", "url": "https://arxiv.org/auth/show-endorsers/1706.03762", "ts": 1767578316.339496}
+{"event": "fetched", "url": "https://info.arxiv.org/help/mathjax.html", "depth": 1, "file": "rivir_crawl/info.arxiv.org_help_mathjax.html.html", "ts": 1767578316.641027}
+{"event": "fetched", "url": "https://info.arxiv.org/help/contact.html", "depth": 1, "file": "rivir_crawl/info.arxiv.org_help_contact.html.html", "ts": 1767578317.3640509}
+{"event": "error", "url": "https://info.arxiv.org/help/subscribe", "error": "HTTP Error 404: Not Found", "ts": 1767578318.078094}
+{"event": "fetched", "url": "https://info.arxiv.org/help/license/index.html", "depth": 1, "file": "rivir_crawl/info.arxiv.org_help_license_index.html.html", "ts": 1767578318.250769}
+{"event": "fetched", "url": "https://info.arxiv.org/help/policies/privacy_policy.html", "depth": 1, "file": "rivir_crawl/info.arxiv.org_help_policies_privacy_policy.html.html", "ts": 1767578318.9608672}
+{"event": "fetched", "url": "https://info.arxiv.org/help/web_accessibility.html", "depth": 1, "file": "rivir_crawl/info.arxiv.org_help_web_accessibility.html.html", "ts": 1767578319.668461}
+{"event": "fetched", "url": "https://status.arxiv.org", "depth": 1, "file": "rivir_crawl/status.arxiv.org_index.html", "ts": 1767578320.746766}
+{"event": "blocked_robots", "url": "https://arxiv.org/IgnoreMe", "ts": 1767578321.248672}
+{"event": "blocked_robots", "url": "https://arxiv.org/search/advanced", "ts": 1767578321.2489002}
+{"event": "blocked_robots", "url": "https://arxiv.org/search/cs?searchtype=author&query=Vaswani,+A", "ts": 1767578321.249017}
+{"event": "blocked_robots", "url": "https://arxiv.org/search/cs?searchtype=author&query=Shazeer,+N", "ts": 1767578321.2490938}
+{"event": "blocked_robots", "url": "https://arxiv.org/search/cs?searchtype=author&query=Parmar,+N", "ts": 1767578321.2491672}
+{"event": "blocked_robots", "url": "https://arxiv.org/search/cs?searchtype=author&query=Uszkoreit,+J", "ts": 1767578321.249239}
+{"event": "blocked_robots", "url": "https://arxiv.org/search/cs?searchtype=author&query=Jones,+L", "ts": 1767578321.24946}
+{"event": "blocked_robots", "url": "https://arxiv.org/search/cs?searchtype=author&query=Gomez,+A+N", "ts": 1767578321.249664}
+{"event": "blocked_robots", "url": "https://arxiv.org/search/cs?searchtype=author&query=Kaiser,+L", "ts": 1767578321.249863}
+{"event": "blocked_robots", "url": "https://arxiv.org/search/cs?searchtype=author&query=Polosukhin,+I", "ts": 1767578321.250068}
+{"event": "skip_non_html", "url": "https://arxiv.org/pdf/1706.03762", "content_type": "application/pdf", "ts": 1767578321.320247}
+{"event": "blocked_robots", "url": "https://arxiv.org/show-email/f53b7360/1706.03762", "ts": 1767578321.323373}
+{"event": "skip_non_html", "url": "https://arxiv.org/pdf/1706.03762", "content_type": "application/pdf", "ts": 1767578321.39483}
+{"event": "blocked_robots", "url": "https://arxiv.org/src/1706.03762", "ts": 1767578321.39829}
+{"event": "blocked_robots", "url": "https://arxiv.org/prevnext?id=1706.03762&function=prev&context=cs.CL", "ts": 1767578321.3986151}
+{"event": "blocked_robots", "url": "https://arxiv.org/prevnext?id=1706.03762&function=next&context=cs.CL", "ts": 1767578321.3988569}
+{"event": "blocked_robots", "url": "https://arxiv.org/tb/1706.03762", "ts": 1767578321.399095}
+{"event": "blocked_robots", "url": "https://arxiv.org/auth/show-endorsers/1706.03762", "ts": 1767578321.399292}
+{"event": "error", "url": "https://info.arxiv.org/help/subscribe", "error": "HTTP Error 404: Not Found", "ts": 1767578321.5760698}
+{"event": "fetched", "url": "https://info.arxiv.org/about/ourmembers.html#our-members", "depth": 2, "file": "rivir_crawl/info.arxiv.org_about_ourmembers.html.html", "ts": 1767578321.7708302}
+{"event": "error", "url": "https://arxiv.org/about/funding", "error": "HTTP Error 404: Not Found", "ts": 1767578322.555504}
+{"event": "fetched", "url": "https://arxiv.org", "depth": 2, "file": "rivir_crawl/arxiv.org_index.html", "ts": 1767578322.606428}
+{"event": "fetched", "url": "https://info.arxiv.org/index.html", "depth": 2, "file": "rivir_crawl/info.arxiv.org_index.html.html", "ts": 1767578323.3488069}
+{"event": "fetched", "url": "https://info.arxiv.org/about/index.html", "depth": 2, "file": "rivir_crawl/info.arxiv.org_about_index.html.html", "ts": 1767578323.924284}
+{"event": "fetched", "url": "https://info.arxiv.org/about/people/index.html", "depth": 2, "file": "rivir_crawl/info.arxiv.org_about_people_index.html.html", "ts": 1767578324.599932}
+{"event": "fetched", "url": "https://info.arxiv.org/about/governance.html", "depth": 2, "file": "rivir_crawl/info.arxiv.org_about_governance.html.html", "ts": 1767578325.4496782}
+{"event": "fetched", "url": "https://info.arxiv.org/about/arXiv_bylaws.html", "depth": 2, "file": "rivir_crawl/info.arxiv.org_about_arXiv_bylaws.html.html", "ts": 1767578326.142854}
+{"event": "fetched", "url": "https://info.arxiv.org/about/people/arxiv_advisory_board.html", "depth": 2, "file": "rivir_crawl/info.arxiv.org_about_people_arxiv_advisory_board.html.html", "ts": 1767578326.850306}
+{"event": "fetched", "url": "https://info.arxiv.org/about/people/science_advisory_council.html", "depth": 2, "file": "rivir_crawl/info.arxiv.org_about_people_science_advisory_council.html.html", "ts": 1767578327.555823}
+{"event": "fetched", "url": "https://info.arxiv.org/about/people/editorial_advisory_council.html", "depth": 2, "file": "rivir_crawl/info.arxiv.org_about_people_editorial_advisory_council.html.html", "ts": 1767578328.247458}
+{"event": "fetched", "url": "https://info.arxiv.org/about/people/institutions_advisory_council.html", "depth": 2, "file": "rivir_crawl/info.arxiv.org_about_people_institutions_advisory_council.html.html", "ts": 1767578329.082457}
+{"event": "fetched", "url": "https://info.arxiv.org/about/membership.html", "depth": 2, "file": "rivir_crawl/info.arxiv.org_about_membership.html.html", "ts": 1767578329.7884722}
+{"event": "fetched", "url": "https://info.arxiv.org/about/funding.html", "depth": 2, "file": "rivir_crawl/info.arxiv.org_about_funding.html.html", "ts": 1767578330.478816}
+{"event": "fetched", "url": "https://info.arxiv.org/about/reports/index.html", "depth": 2, "file": "rivir_crawl/info.arxiv.org_about_reports_index.html.html", "ts": 1767578331.172674}
+{"event": "fetched", "url": "https://info.arxiv.org/about/accessibility.html", "depth": 2, "file": "rivir_crawl/info.arxiv.org_about_accessibility.html.html", "ts": 1767578331.882357}
+{"event": "error", "url": "https://blog.arxiv.org/", "error": "Remote end closed connection without response", "ts": 1767578333.6185868}
+{"event": "fetched", "url": "https://info.arxiv.org/help/index.html", "depth": 2, "file": "rivir_crawl/info.arxiv.org_help_index.html.html", "ts": 1767578333.698215}
+{"event": "fetched", "url": "https://info.arxiv.org/help/submit/index.html", "depth": 2, "file": "rivir_crawl/info.arxiv.org_help_submit_index.html.html", "ts": 1767578334.552211}
+{"event": "fetched", "url": "https://info.arxiv.org/help/submit_tex.html", "depth": 2, "file": "rivir_crawl/info.arxiv.org_help_submit_tex.html.html", "ts": 1767578335.248333}
+{"event": "blocked_robots", "url": "https://en.wikipedia.org/wiki/Shape", "ts": 1767578571.185281}
+{"event": "blocked_robots", "url": "https://en.wikipedia.org/wiki/Shape", "ts": 1767578574.080418}
+{"event": "blocked_robots", "url": "https://en.wikipedia.org/wiki/Shape", "ts": 1767578575.838392}
+{"event": "blocked_robots", "url": "https://en.wikipedia.org/wiki/Shape", "ts": 1767578578.313461}
+{"event": "blocked_robots", "url": "https://en.wikipedia.org/wiki/Shape", "ts": 1767578613.542763}
+{"event": "blocked_robots", "url": "https://en.wikipedia.org/wiki/Shape", "ts": 1767578615.656814}
+{"event": "blocked_robots", "url": "https://en.wikipedia.org/wiki/Shape", "ts": 1767578616.815845}
+{"event": "blocked_robots", "url": "https://en.wikipedia.org/wiki/Shape", "ts": 1767578617.982786}
+{"event": "blocked_robots", "url": "https://en.wikipedia.org/wiki/Shape", "ts": 1767578619.090775}
+{"event": "blocked_robots", "url": "https://en.wikipedia.org/wiki/Shape", "ts": 1767578626.8449018}
+{"event": "blocked_robots", "url": "https://en.wikipedia.org/wiki/Shape", "ts": 1767578630.041986}

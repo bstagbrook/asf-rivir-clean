@@ -1,0 +1,196 @@
+{
+  "fragments": {
+    "A": {
+      "description": "Entity (user, system, player, file)",
+      "frequency": 15
+    },
+    "((AS)(AS))": {
+      "description": "User Workflow (navigate then search, open then edit)",
+      "frequency": 12
+    },
+    "(AS)": {
+      "description": "Basic Action (click, type, play, save)",
+      "frequency": 15
+    },
+    "S": {
+      "description": "Container (app, database, browser, game state)",
+      "frequency": 15
+    },
+    "((((AS)(AS))(AS))S)": {
+      "description": "Complex App (photo editor, browser with extensions)",
+      "frequency": 4
+    },
+    "(((AS)(AS))S)": {
+      "description": "Interactive App (browser, editor, player, chat)",
+      "frequency": 8
+    },
+    "((AS)S)": {
+      "description": "Simple Tool (calculator, terminal, viewer)",
+      "frequency": 3
+    }
+  },
+  "decompositions": [
+    {
+      "request": "chrome web browser clone",
+      "asf": "((((AS)(AS))(AS))S)",
+      "fragments": [
+        "A",
+        "((AS)(AS))",
+        "(AS)",
+        "S",
+        "((((AS)(AS))(AS))S)"
+      ]
+    },
+    {
+      "request": "text editor like notepad",
+      "asf": "(((AS)(AS))S)",
+      "fragments": [
+        "A",
+        "((AS)(AS))",
+        "(AS)",
+        "S",
+        "(((AS)(AS))S)"
+      ]
+    },
+    {
+      "request": "music player app",
+      "asf": "(((AS)(AS))S)",
+      "fragments": [
+        "A",
+        "((AS)(AS))",
+        "(AS)",
+        "S",
+        "(((AS)(AS))S)"
+      ]
+    },
+    {
+      "request": "photo editing software",
+      "asf": "((AS)S)",
+      "fragments": [
+        "((AS)S)",
+        "A",
+        "(AS)",
+        "S"
+      ]
+    },
+    {
+      "request": "simple calculator",
+      "asf": "((AS)S)",
+      "fragments": [
+        "((AS)S)",
+        "A",
+        "(AS)",
+        "S"
+      ]
+    },
+    {
+      "request": "file manager",
+      "asf": "(((AS)(AS))S)",
+      "fragments": [
+        "A",
+        "((AS)(AS))",
+        "(AS)",
+        "S",
+        "(((AS)(AS))S)"
+      ]
+    },
+    {
+      "request": "email client",
+      "asf": "(((AS)(AS))S)",
+      "fragments": [
+        "A",
+        "((AS)(AS))",
+        "(AS)",
+        "S",
+        "(((AS)(AS))S)"
+      ]
+    },
+    {
+      "request": "chat messenger",
+      "asf": "(((AS)(AS))S)",
+      "fragments": [
+        "A",
+        "((AS)(AS))",
+        "(AS)",
+        "S",
+        "(((AS)(AS))S)"
+      ]
+    },
+    {
+      "request": "terminal emulator",
+      "asf": "((AS)S)",
+      "fragments": [
+        "((AS)S)",
+        "A",
+        "(AS)",
+        "S"
+      ]
+    },
+    {
+      "request": "CRM system for sales team",
+      "asf": "((((AS)(AS))(AS))S)",
+      "fragments": [
+        "A",
+        "((AS)(AS))",
+        "(AS)",
+        "S",
+        "((((AS)(AS))(AS))S)"
+      ]
+    },
+    {
+      "request": "inventory management system",
+      "asf": "(((AS)(AS))S)",
+      "fragments": [
+        "A",
+        "((AS)(AS))",
+        "(AS)",
+        "S",
+        "(((AS)(AS))S)"
+      ]
+    },
+    {
+      "request": "payroll software",
+      "asf": "((((AS)(AS))(AS))S)",
+      "fragments": [
+        "A",
+        "((AS)(AS))",
+        "(AS)",
+        "S",
+        "((((AS)(AS))(AS))S)"
+      ]
+    },
+    {
+      "request": "project management tool",
+      "asf": "((((AS)(AS))(AS))S)",
+      "fragments": [
+        "A",
+        "((AS)(AS))",
+        "(AS)",
+        "S",
+        "((((AS)(AS))(AS))S)"
+      ]
+    },
+    {
+      "request": "help desk system",
+      "asf": "(((AS)(AS))S)",
+      "fragments": [
+        "A",
+        "((AS)(AS))",
+        "(AS)",
+        "S",
+        "(((AS)(AS))S)"
+      ]
+    },
+    {
+      "request": "accounting software",
+      "asf": "(((AS)(AS))S)",
+      "fragments": [
+        "A",
+        "((AS)(AS))",
+        "(AS)",
+        "S",
+        "(((AS)(AS))S)"
+      ]
+    }
+  ]
+}

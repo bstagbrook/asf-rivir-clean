@@ -1,0 +1,53 @@
+#!/usr/bin/env python3
+"""
+RIVIR Direct Launcher
+
+Usage:
+  ./rivir                    # Interactive mode
+  ./rivir "create a todo"    # Direct creation
+  ./rivir status             # Show status
+"""
+
+import sys
+import os
+from pathlib import Path
+
+# Add current directory to path
+sys.path.insert(0, str(Path(__file__).parent))
+
+from rivir_direct import RIVIRDirect, main
+
+if __name__ == "__main__":
+    if len(sys.argv) == 1:
+        # Interactive mode
+        main()
+    elif len(sys.argv) == 2:
+        arg = sys.argv[1]
+        if arg == "status":
+            rivir = RIVIRDirect()
+            status = rivir.status()
+            print(f"RIVIR Status:")
+            print(f"  Receipts: {status['receipts_created']}")
+            print(f"  Alignment: {status['avg_alignment']:.2f}")
+            print(f"  Satisfaction: {status['avg_satisfaction']:.2f}")
+            print(f"  Quantum: {'✓' if status['has_quantum'] else '✗'}")
+            rivir.close()
+        else:
+            # Direct creation
+            rivir = RIVIRDirect()
+            try:
+                creation, data = rivir.collapse_and_create(arg)
+                if data.get('declined'):
+                    print(f"Declined: {data['reason']}")
+                else:
+                    print(f"Created: {len(creation)} chars")
+                    print(f"Listening: {data['listening']['deeper_need']}")
+                    print(f"Alignment: {data['alignment']:.2f}")
+                    if len(creation) <= 500:
+                        print(f"\nCreation:\n{creation}")
+                    else:
+                        print(f"\nCreation (first 500 chars):\n{creation[:500]}...")
+            finally:
+                rivir.close()
+    else:
+        print(__doc__)

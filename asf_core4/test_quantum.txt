@@ -1,0 +1,11 @@
+
+basis 00 01 10 11
+uniform
+show
+hadamard 0
+show
+mark lambda s: s == '11'
+show
+grover
+show
+sample 100

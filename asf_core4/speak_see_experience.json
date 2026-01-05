@@ -1,0 +1,113 @@
+{
+  "style_scores": {
+    "feature_rich": [
+      0.7,
+      0.4,
+      0.7,
+      0.5
+    ],
+    "practical": [
+      0.2
+    ],
+    "minimal": [
+      0.7,
+      0.3,
+      0.0
+    ],
+    "elegant": [
+      0.5,
+      0.6
+    ]
+  },
+  "feature_scores": {
+    "Core: gui": [
+      0.7,
+      0.2
+    ],
+    "Core: calculator": [
+      0.7,
+      0.2
+    ],
+    "Dark mode": [
+      0.7,
+      0.4,
+      0.7,
+      0.5
+    ],
+    "Export to PDF": [
+      0.7,
+      0.4,
+      0.7,
+      0.5
+    ],
+    "Keyboard shortcuts": [
+      0.7,
+      0.4,
+      0.7,
+      0.5
+    ],
+    "Undo/redo": [
+      0.7,
+      0.4,
+      0.7,
+      0.5
+    ],
+    "Auto-save": [
+      0.7,
+      0.4,
+      0.7,
+      0.5
+    ],
+    "Error handling": [
+      0.2
+    ],
+    "Loading states": [
+      0.2
+    ],
+    "Core: video": [
+      0.7,
+      0.4,
+      0.5
+    ],
+    "Core: generator": [
+      0.7,
+      0.4,
+      0.5
+    ],
+    "Smooth animations": [
+      0.5,
+      0.6
+    ],
+    "Clean typography": [
+      0.5,
+      0.6
+    ],
+    "Core: program": [
+      0.3,
+      0.7,
+      0.6
+    ],
+    "Core: can": [
+      0.3,
+      0.7,
+      0.6
+    ],
+    "Core: open": [
+      0.3,
+      0.7,
+      0.6
+    ],
+    "Core: choose": [
+      0.0,
+      0.5
+    ],
+    "Core: your": [
+      0.0,
+      0.5
+    ],
+    "Core: own": [
+      0.0,
+      0.5
+    ]
+  }
+}

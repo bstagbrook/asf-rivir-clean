@@ -1,0 +1,255 @@
+{
+  "analyses": [
+    {
+      "program_name": "simple_calculator",
+      "source_code": "\ndef add(a, b):\n    return a + b\n\ndef subtract(a, b):\n    return a - b\n\ndef main():\n    while True:\n        try:\n            a = float(input(\"First number: \"))\n            op = input(\"Operation (+, -, *, /): \")\n            b = float(input(\"Second number: \"))\n            \n            if op == '+':\n                result = add(a, b)\n            elif op == '-':\n                result = subtract(a, b)\n            elif op == '*':\n                result = a * b\n            elif op == '/':\n                result = a / b if b != 0 else \"Error: Division by zero\"\n            else:\n                result = \"Invalid operation\"\n                \n            print(f\"Result: {result}\")\n            \n            if input(\"Continue? (y/n): \").lower() != 'y':\n                break\n        except ValueError:\n            print(\"Invalid input\")\n\nif __name__ == \"__main__\":\n    main()\n",
+      "asf_representation": "((S(AA))((AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)(AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)(AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)(AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)(AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)(AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)(AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)))",
+      "components": [
+        {
+          "name": "simple_calculator_main_entry",
+          "asf_pattern": "(AS)",
+          "python_source": "main() function",
+          "semantic_role": "program_entry_point",
+          "complexity_level": 1,
+          "dependencies": [],
+          "frequency": 3
+        },
+        {
+          "name": "simple_calculator_functions",
+          "asf_pattern": "(((AS)(AS))S)",
+          "python_source": "2 function definitions",
+          "semantic_role": "business_logic",
+          "complexity_level": 3,
+          "dependencies": [],
+          "frequency": 3
+        },
+        {
+          "name": "simple_calculator_io_operations",
+          "asf_pattern": "((AS)(AS))",
+          "python_source": "I/O operations",
+          "semantic_role": "user_interface",
+          "complexity_level": 2,
+          "dependencies": [],
+          "frequency": 3
+        }
+      ],
+      "total_complexity": 3,
+      "program_type": "script"
+    },
+    {
+      "program_name": "file_organizer",
+      "source_code": "\nimport os\nimport shutil\nfrom pathlib import Path\n\nclass FileOrganizer:\n    def __init__(self, source_dir):\n        self.source_dir = Path(source_dir)\n        \n    def organize_by_extension(self):\n        for file in self.source_dir.iterdir():\n            if file.is_file():\n                ext = file.suffix.lower()\n                if ext:\n                    dest_dir = self.source_dir / ext[1:]  # Remove the dot\n                    dest_dir.mkdir(exist_ok=True)\n                    shutil.move(str(file), str(dest_dir / file.name))\n                    \n    def organize_by_date(self):\n        for file in self.source_dir.iterdir():\n            if file.is_file():\n                mtime = file.stat().st_mtime\n                date_str = time.strftime(\"%Y-%m\", time.localtime(mtime))\n                dest_dir = self.source_dir / date_str\n                dest_dir.mkdir(exist_ok=True)\n                shutil.move(str(file), str(dest_dir / file.name))\n\ndef main():\n    import sys\n    if len(sys.argv) != 2:\n        print(\"Usage: file_organizer.py <directory>\")\n        sys.exit(1)\n        \n    organizer = FileOrganizer(sys.argv[1])\n    \n    choice = input(\"Organize by (e)xtension or (d)ate? \")\n    if choice.lower() == 'e':\n        organizer.organize_by_extension()\n    elif choice.lower() == 'd':\n        organizer.organize_by_date()\n    else:\n        print(\"Invalid choice\")\n\nif __name__ == \"__main__\":\n    main()\n",
+      "asf_representation": "((S(AA))((AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)(AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)(AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)(AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)(AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)(AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)(AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)))",
+      "components": [
+        {
+          "name": "file_organizer_main_entry",
+          "asf_pattern": "(AS)",
+          "python_source": "main() function",
+          "semantic_role": "program_entry_point",
+          "complexity_level": 1,
+          "dependencies": [
+            "os",
+            "shutil",
+            "pathlib",
+            "sys"
+          ],
+          "frequency": 1
+        },
+        {
+          "name": "file_organizer_class_definitions",
+          "asf_pattern": "((AS)S)",
+          "python_source": "1 class definitions",
+          "semantic_role": "data_structures",
+          "complexity_level": 2,
+          "dependencies": [
+            "os",
+            "shutil",
+            "pathlib",
+            "sys"
+          ],
+          "frequency": 2
+        },
+        {
+          "name": "file_organizer_functions",
+          "asf_pattern": "(((AS)(AS))S)",
+          "python_source": "3 function definitions",
+          "semantic_role": "business_logic",
+          "complexity_level": 3,
+          "dependencies": [
+            "os",
+            "shutil",
+            "pathlib",
+            "sys"
+          ],
+          "frequency": 1
+        },
+        {
+          "name": "file_organizer_io_operations",
+          "asf_pattern": "((AS)(AS))",
+          "python_source": "I/O operations",
+          "semantic_role": "user_interface",
+          "complexity_level": 2,
+          "dependencies": [
+            "os",
+            "shutil",
+            "pathlib",
+            "sys"
+          ],
+          "frequency": 1
+        },
+        {
+          "name": "file_organizer_file_operations",
+          "asf_pattern": "(((AS)(AS))S)",
+          "python_source": "File operations",
+          "semantic_role": "data_persistence",
+          "complexity_level": 3,
+          "dependencies": [
+            "os",
+            "shutil",
+            "pathlib",
+            "sys"
+          ],
+          "frequency": 2
+        }
+      ],
+      "total_complexity": 3,
+      "program_type": "cli_tool"
+    },
+    {
+      "program_name": "web_scraper",
+      "source_code": "\nimport requests\nfrom bs4 import BeautifulSoup\nimport json\nimport time\n\nclass WebScraper:\n    def __init__(self, base_url):\n        self.base_url = base_url\n        self.session = requests.Session()\n        \n    def scrape_page(self, url):\n        try:\n            response = self.session.get(url)\n            response.raise_for_status()\n            return BeautifulSoup(response.content, 'html.parser')\n        except requests.RequestException as e:\n            print(f\"Error scraping {url}: {e}\")\n            return None\n            \n    def extract_links(self, soup):\n        if soup:\n            return [a.get('href') for a in soup.find_all('a', href=True)]\n        return []\n        \n    def save_data(self, data, filename):\n        with open(filename, 'w') as f:\n            json.dump(data, f, indent=2)\n\ndef main():\n    scraper = WebScraper(\"https://example.com\")\n    \n    urls = input(\"Enter URLs (comma-separated): \").split(',')\n    all_links = []\n    \n    for url in urls:\n        url = url.strip()\n        print(f\"Scraping {url}...\")\n        soup = scraper.scrape_page(url)\n        links = scraper.extract_links(soup)\n        all_links.extend(links)\n        time.sleep(1)  # Be respectful\n        \n    scraper.save_data(all_links, 'scraped_links.json')\n    print(f\"Saved {len(all_links)} links to scraped_links.json\")\n\nif __name__ == \"__main__\":\n    main()\n",
+      "asf_representation": "((S(AA))((AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)(AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)(AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)(AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)(AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)(AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)(AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)))",
+      "components": [
+        {
+          "name": "web_scraper_main_entry",
+          "asf_pattern": "(AS)",
+          "python_source": "main() function",
+          "semantic_role": "program_entry_point",
+          "complexity_level": 1,
+          "dependencies": [
+            "requests",
+            "bs4",
+            "json",
+            "time"
+          ],
+          "frequency": 1
+        },
+        {
+          "name": "web_scraper_class_definitions",
+          "asf_pattern": "((AS)S)",
+          "python_source": "1 class definitions",
+          "semantic_role": "data_structures",
+          "complexity_level": 2,
+          "dependencies": [
+            "requests",
+            "bs4",
+            "json",
+            "time"
+          ],
+          "frequency": 1
+        },
+        {
+          "name": "web_scraper_functions",
+          "asf_pattern": "(((AS)(AS))S)",
+          "python_source": "4 function definitions",
+          "semantic_role": "business_logic",
+          "complexity_level": 3,
+          "dependencies": [
+            "requests",
+            "bs4",
+            "json",
+            "time"
+          ],
+          "frequency": 1
+        },
+        {
+          "name": "web_scraper_io_operations",
+          "asf_pattern": "((AS)(AS))",
+          "python_source": "I/O operations",
+          "semantic_role": "user_interface",
+          "complexity_level": 2,
+          "dependencies": [
+            "requests",
+            "bs4",
+            "json",
+            "time"
+          ],
+          "frequency": 1
+        },
+        {
+          "name": "web_scraper_file_operations",
+          "asf_pattern": "(((AS)(AS))S)",
+          "python_source": "File operations",
+          "semantic_role": "data_persistence",
+          "complexity_level": 3,
+          "dependencies": [
+            "requests",
+            "bs4",
+            "json",
+            "time"
+          ],
+          "frequency": 1
+        }
+      ],
+      "total_complexity": 3,
+      "program_type": "library"
+    }
+  ],
+  "components": {
+    "program_entry_point:(AS)": {
+      "name": "simple_calculator_main_entry",
+      "asf_pattern": "(AS)",
+      "python_source": "main() function",
+      "semantic_role": "program_entry_point",
+      "complexity_level": 1,
+      "dependencies": [],
+      "frequency": 3
+    },
+    "business_logic:(((AS)(AS))S)": {
+      "name": "simple_calculator_functions",
+      "asf_pattern": "(((AS)(AS))S)",
+      "python_source": "2 function definitions",
+      "semantic_role": "business_logic",
+      "complexity_level": 3,
+      "dependencies": [],
+      "frequency": 3
+    },
+    "user_interface:((AS)(AS))": {
+      "name": "simple_calculator_io_operations",
+      "asf_pattern": "((AS)(AS))",
+      "python_source": "I/O operations",
+      "semantic_role": "user_interface",
+      "complexity_level": 2,
+      "dependencies": [],
+      "frequency": 3
+    },
+    "data_structures:((AS)S)": {
+      "name": "file_organizer_class_definitions",
+      "asf_pattern": "((AS)S)",
+      "python_source": "1 class definitions",
+      "semantic_role": "data_structures",
+      "complexity_level": 2,
+      "dependencies": [
+        "os",
+        "shutil",
+        "pathlib",
+        "sys"
+      ],
+      "frequency": 2
+    },
+    "data_persistence:(((AS)(AS))S)": {
+      "name": "file_organizer_file_operations",
+      "asf_pattern": "(((AS)(AS))S)",
+      "python_source": "File operations",
+      "semantic_role": "data_persistence",
+      "complexity_level": 3,
+      "dependencies": [
+        "os",
+        "shutil",
+        "pathlib",
+        "sys"
+      ],
+      "frequency": 2
+    }
+  }
+}

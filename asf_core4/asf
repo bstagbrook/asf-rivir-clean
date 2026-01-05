@@ -1,0 +1,361 @@
+#!/usr/bin/env python3
+"""
+ASF - The Shape OS Command Line Interface
+
+One command. Everything.
+
+Usage:
+    asf                    # Interactive REPL
+    asf speak "..."        # NL → Waveform
+    asf compile "code"     # Python → Dyck → Waveform
+    asf run <hash>         # Execute waveform
+    asf rate <hash> <0-10> # Record satisfaction
+    asf status             # Quick status
+    asf quantum            # Quantum affordances REPL
+    asf ladder             # Show affordance ladder
+    asf demo               # Run scripted demo
+    asf train              # Training session
+"""
+
+import sys
+import argparse
+from pathlib import Path
+
+# Ensure module path
+sys.path.insert(0, str(Path(__file__).parent))
+
+
+def cmd_repl(args):
+    """Interactive REPL."""
+    from shape_os import demo
+    demo()
+
+
+def cmd_speak(args):
+    """Create waveform from natural language."""
+    from shape_os import ShapeOS
+    os = ShapeOS()
+    description = " ".join(args.description)
+    wave, receipt = os.speak(description)
+
+    print(f"\nWaveform: {wave.source_hash}")
+    print(f"Dyck:     {wave.dyck}")
+    print(f"Energy:   {wave.energy:.2f}")
+    print(f"Status:   {receipt['status']}")
+
+    if receipt['status'] == 'continuation':
+        print(f"Label:    {receipt['label']}")
+
+    os.close()
+
+
+def cmd_compile(args):
+    """Compile Python to waveform."""
+    from shape_os import ShapeOS
+    os = ShapeOS()
+    source = args.code.replace('\\n', '\n')
+    try:
+        wave, receipt = os.compile(source)
+        print(f"\nCompiled: {wave.source_hash}")
+        print(f"Dyck:     {wave.dyck[:60]}...")
+        print(f"Status:   {receipt['status']}")
+
+        if args.run:
+            result = os.run(wave)
+            print(f"Result:   {result}")
+    except Exception as e:
+        print(f"Error: {e}")
+    os.close()
+
+
+def cmd_run(args):
+    """Execute a waveform."""
+    from shape_os import ShapeOS
+    from py_to_dyck import run_dyck
+
+    os = ShapeOS()
+    wave = os.active_waves.get(args.hash)
+    if not wave:
+        print(f"Wave {args.hash} not found in active waves")
+        print("Tip: Use 'asf speak' or 'asf compile' first")
+        os.close()
+        return
+
+    try:
+        result = os.run(wave)
+        print(f"Result: {result}")
+    except Exception as e:
+        print(f"Error: {e}")
+    os.close()
+
+
+def cmd_rate(args):
+    """Record satisfaction."""
+    from shape_os import ShapeOS
+    os = ShapeOS()
+    satisfaction = args.score / 10.0
+    feedback = " ".join(args.feedback) if args.feedback else ""
+    os.experience(args.hash, satisfaction, feedback)
+    print(f"Recorded: {satisfaction:.0%} satisfaction for {args.hash}")
+    os.close()
+
+
+def cmd_status(args):
+    """Show system status."""
+    from shape_os import ShapeOS
+    os = ShapeOS()
+    status = os.status()
+
+    print(f"\n  SHAPE OS STATUS")
+    print(f"  {'='*40}")
+    print(f"  Active waves:  {status['active_waves']}")
+    print(f"  Invariants:    {status['invariants']}")
+    print(f"  Mean sat:      {status['mean_satisfaction']:.0%}")
+
+    if status['satisfaction_trend']:
+        trend = status['satisfaction_trend']
+        spark = ''.join(['▁▂▃▄▅▆▇█'[min(7, int(s*8))] for s in trend])
+        print(f"  Trend:         {spark}")
+
+    os.close()
+
+
+def cmd_quantum(args):
+    """Quantum affordances REPL."""
+    try:
+        from quantum_noob_cli import QuantumNoobRuntime
+        runtime = QuantumNoobRuntime()
+        if args.command:
+            runtime.dispatch(" ".join(args.command))
+        else:
+            runtime.run_interactive()
+    except ImportError:
+        print("quantum_noob_cli not available")
+
+
+def cmd_ladder(args):
+    """Show the quantum affordance ladder."""
+    ladder = """
+QUANTUM AFFORDANCES LADDER
+===========================
+
+SUPERPOSITION
+  Everyday:     Hold two ideas in mind
+  Probabilistic: Multiple hypotheses with weights
+  Parallelism:  Run multiple guesses in parallel
+  Complex:      Weights have phase
+  Quantum:      Coherent superposition of basis states
+
+INTERFERENCE
+  Everyday:     Pros/cons cancel in a decision
+  Probabilistic: Bayesian reweighting
+  Signal:       Constructive/destructive waves
+  Complex:      Phase-sensitive combine
+  Quantum:      Interference steers probability mass
+
+ENTANGLEMENT
+  Everyday:     Coupled variables
+  Probabilistic: Strong correlation
+  Shared:       One defines the other
+  Non-factor:   Non-factorizable joint state
+  Quantum:      Entangled states with non-classical correlations
+
+MEASUREMENT
+  Everyday:     Commit to a choice
+  Sampling:     Draw from a distribution
+  Observe:      Observational disturbance
+  Project:      Projection to basis
+  Quantum:      Collapse to classical outcome
+
+REVERSIBILITY
+  Everyday:     Undo/redo
+  Logic:        Reversible logic gates
+  Lossless:     Lossless transforms
+  Unitary:      Unitary transforms
+  Quantum:      Unitary evolution is always reversible
+
+SAMPLING
+  Everyday:     Run process many times, count outcomes
+  Monte Carlo:  Monte Carlo sampling
+  Stochastic:   Stochastic simulation
+  Wave:         Wavefunction to probabilities
+  Quantum:      Sample on hardware
+"""
+    print(ladder)
+
+
+def cmd_demo(args):
+    """Run scripted demo."""
+    from shape_os import ShapeOS
+
+    os = ShapeOS(db_prefix=":memory:")
+
+    print("\n" + "=" * 60)
+    print("  SHAPE OS DEMO")
+    print("=" * 60)
+
+    # Demo sequence
+    demos = [
+        ("Speaking: 'a calm todo list'", "speak", "a calm todo list"),
+        ("Speaking: 'elegant timer with gentle sounds'", "speak", "elegant timer with gentle sounds"),
+        ("Compiling: '1 + 2 * 3'", "compile", "1 + 2 * 3"),
+        ("Rating first wave 9/10", "rate", None),
+    ]
+
+    waves = []
+    for desc, action, arg in demos:
+        print(f"\n  {desc}")
+        if action == "speak":
+            wave, receipt = os.speak(arg)
+            waves.append(wave)
+            print(f"    Hash:   {wave.source_hash}")
+            print(f"    Energy: {wave.energy:.2f}")
+            print(f"    Status: {receipt['status']}")
+        elif action == "compile":
+            wave, receipt = os.compile(arg)
+            waves.append(wave)
+            result = os.run(wave)
+            print(f"    Hash:   {wave.source_hash}")
+            print(f"    Result: {result}")
+        elif action == "rate" and waves:
+            os.experience(waves[0].source_hash, 0.9, "love the calmness")
+            print(f"    Recorded 90% satisfaction")
+
+    # Show learned state
+    print(f"\n  LEARNED STATE:")
+    status = os.status()
+    print(f"    Waves:      {status['active_waves']}")
+    print(f"    Invariants: {status['invariants']}")
+    print(f"    Satisfaction: {status['mean_satisfaction']:.0%}")
+
+    os.close()
+    print("\n  Demo complete.")
+
+
+def cmd_train(args):
+    """Interactive training session."""
+    from shape_os import ShapeOS, Waveform
+
+    os = ShapeOS()
+
+    print("\n" + "=" * 60)
+    print("  TRAINING SESSION")
+    print("  Tell me what you want. Rate what I give you.")
+    print("  I learn YOUR preferences.")
+    print("=" * 60)
+    print("\n  Type 'done' when finished.\n")
+
+    while True:
+        try:
+            request = input("  What do you want? > ").strip()
+        except (EOFError, KeyboardInterrupt):
+            break
+
+        if not request or request.lower() == 'done':
+            break
+
+        # Generate waves
+        wave, receipt = os.speak(request)
+
+        print(f"\n  Generated: {wave.source_hash}")
+        print(f"  Dyck:      {wave.dyck}")
+        print(f"  Energy:    {wave.energy:.2f}")
+
+        # Get satisfaction
+        try:
+            score_str = input("  Satisfaction (0-10): ").strip()
+            score = float(score_str) / 10.0
+        except (ValueError, EOFError):
+            continue
+
+        feedback = input("  Feedback (optional): ").strip()
+
+        os.experience(wave.source_hash, score, feedback)
+        print(f"  Recorded: {score:.0%}")
+
+        # Show prediction for similar
+        pred, conf = os.si.predict(wave.source_hash, request)
+        print(f"  Next prediction: {pred:.0%} @ {conf:.0%} confidence")
+        print()
+
+    status = os.status()
+    print(f"\n  Session complete.")
+    print(f"  Learned {status['invariants']} invariants")
+    print(f"  Mean satisfaction: {status['mean_satisfaction']:.0%}")
+
+    os.close()
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        prog='asf',
+        description='Shape OS - The description IS the software',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  asf                           # Interactive REPL
+  asf speak "calm todo list"    # Create waveform from words
+  asf compile "1 + 2"           # Compile Python
+  asf status                    # System status
+  asf quantum                   # Quantum affordances REPL
+  asf demo                      # Scripted demo
+  asf train                     # Training session
+"""
+    )
+
+    subparsers = parser.add_subparsers(dest='command')
+
+    # speak
+    p = subparsers.add_parser('speak', help='Create waveform from NL')
+    p.add_argument('description', nargs='+', help='Natural language description')
+    p.set_defaults(func=cmd_speak)
+
+    # compile
+    p = subparsers.add_parser('compile', help='Compile Python to waveform')
+    p.add_argument('code', help='Python code')
+    p.add_argument('--run', '-r', action='store_true', help='Execute after compile')
+    p.set_defaults(func=cmd_compile)
+
+    # run
+    p = subparsers.add_parser('run', help='Execute waveform')
+    p.add_argument('hash', help='Waveform hash')
+    p.set_defaults(func=cmd_run)
+
+    # rate
+    p = subparsers.add_parser('rate', help='Record satisfaction')
+    p.add_argument('hash', help='Waveform hash')
+    p.add_argument('score', type=float, help='Score 0-10')
+    p.add_argument('feedback', nargs='*', help='Optional feedback')
+    p.set_defaults(func=cmd_rate)
+
+    # status
+    p = subparsers.add_parser('status', help='System status')
+    p.set_defaults(func=cmd_status)
+
+    # quantum
+    p = subparsers.add_parser('quantum', help='Quantum affordances REPL')
+    p.add_argument('command', nargs='*', help='Command to run')
+    p.set_defaults(func=cmd_quantum)
+
+    # ladder
+    p = subparsers.add_parser('ladder', help='Show affordance ladder')
+    p.set_defaults(func=cmd_ladder)
+
+    # demo
+    p = subparsers.add_parser('demo', help='Run scripted demo')
+    p.set_defaults(func=cmd_demo)
+
+    # train
+    p = subparsers.add_parser('train', help='Training session')
+    p.set_defaults(func=cmd_train)
+
+    args = parser.parse_args()
+
+    if args.command is None:
+        cmd_repl(args)
+    else:
+        args.func(args)
+
+
+if __name__ == '__main__':
+    main()
